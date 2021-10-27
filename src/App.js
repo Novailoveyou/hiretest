@@ -9,10 +9,11 @@ function App() {
   const handleClick = async () => {
     setCount(count + 1)
 
-    const res = await fetch('https://randomuser.me/api')
+    const res = await fetch(`https://randomuser.me/api?page=${count + 1}`)
     const data = await res.json()
     const img = data.results[0].picture.thumbnail
-    setImgs([...imgs, img])
+    const i = [...imgs, img]
+    setImgs(i)
   }
 
   return (
