@@ -11,7 +11,7 @@ function App() {
 
     const res = await fetch('https://randomuser.me/api')
     const data = await res.json()
-    const img = data.results[0].picture.large
+    const img = data.results[0].picture.thumbnail
     setImgs([...imgs, img])
   }
 
